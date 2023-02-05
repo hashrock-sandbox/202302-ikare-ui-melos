@@ -43,10 +43,17 @@ export default {
 </template>
 
 <style scoped>
+details {
+  height: 10rem;
+  overflow-y: auto;
+}
+
 .area {
   font-size: 2rem;
   border: 1px solid black;
   min-height: 5rem;
+  max-height: 10rem;
+  overflow-y: auto;
 }
 
 .area__badge {

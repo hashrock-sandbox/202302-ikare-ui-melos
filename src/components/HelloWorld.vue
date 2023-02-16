@@ -26,8 +26,21 @@ export default {
 
 <template>
   <div>
+    セミナーの感想をお寄せください。
+  </div>
+  <div style="margin-top:4rem;">
+    名前：
+    <input type="text" value="メロス">
   </div>
   <div>
+    職業：
+    <input type="text" value="牧人">
+  </div>
+  <p>
+    感想をお寄せください
+
+  </p>
+  <div class="input">
     <div class="area__badge" v-for="(m, idx) in msg">
       {{ m }}
       <button @click="remove(idx)" class="area__badge__delete">x</button>
@@ -39,13 +52,32 @@ export default {
       ここから選択してください
     </summary>
     <button v-for="item in items" @click="input(item)">{{ item }}</button>
-  </details>
+</details>
+  <div>
+    <button>送信</button>
+  </div>
 </template>
 
-<style scoped>
+<style>
+.input {
+  border: 1px solid black;
+  min-height: 5rem;
+}
+
+input {
+  font-size: inherit;
+}
+
 details {
   height: 10rem;
   overflow-y: auto;
+}
+
+
+body {
+  font-size: 150%;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .area {
@@ -63,14 +95,16 @@ details {
   padding: 0.1em;
   position: relative;
 }
-.area__badge:hover > .area__badge__delete {
+
+.area__badge:hover>.area__badge__delete {
   display: inline-block;
 }
+
 .area__badge:hover {
   background-color: aquamarine;
 }
 
-.area__badge__delete{
+.area__badge__delete {
   display: none;
   font-size: 0.5rem;
   position: absolute;
@@ -81,5 +115,4 @@ details {
 
 .read-the-docs {
   color: #888;
-}
-</style>
+}</style>
